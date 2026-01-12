@@ -13,7 +13,7 @@ public class PlayerControls : MonoBehaviour
     }
 
     void Update()
-    {
+    { 
         Vector2 playerPos = playerTransform.position;
 
         //Input.GetAxis("Horizontal");
