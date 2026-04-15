@@ -16,4 +16,6 @@ public class EnemyMovement : ScriptableObject
     public int score;
 
     public float fd;
+
+    public int health;
 }

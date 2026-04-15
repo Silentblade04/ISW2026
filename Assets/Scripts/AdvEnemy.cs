@@ -37,7 +37,7 @@ public class AdvEnemy : EnemyObj
     private void enemySideMovement(float speed, float direction)
     {
       Debug.Log("Moving to player X");
-      this.transform.Translate(new Vector3(0, direction, 0) * speed * Time.deltaTime);
+      this.transform.Translate(new Vector3(direction, 0, 0) * speed * Time.deltaTime);
       
     }
 }

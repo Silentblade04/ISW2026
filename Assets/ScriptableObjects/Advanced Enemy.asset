@@ -19,3 +19,4 @@ MonoBehaviour:
   bottomMaxium: 4
   score: 10
   fd: 3.5
+  health: 2

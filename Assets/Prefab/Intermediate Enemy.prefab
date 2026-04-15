@@ -27,13 +27,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3710683875993249889}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: -13.55, y: 0.09, z: 0}
-  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!212 &853509537351253148
 SpriteRenderer:
   serializedVersion: 2
@@ -83,8 +83,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 3625043607559282579, guid: 19fb86013d8c24d6cb8410c0aadf30fa, type: 3}
-  m_Color: {r: 0.3490566, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: -4559719401701942571, guid: 40544212b0bf5d946bd079521413a86b, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -105,6 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d651d72d6792eb45ba1be71afa6b8ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyObj
+  score: 0
   movementType: {fileID: 11400000, guid: 8068c319178622a4ca86992a83d56ab5, type: 2}
   speed: 0
   leftBound: 0
@@ -153,7 +154,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 0.5}
+    oldSize: {x: 0.32, y: 0.32}
     newSize: {x: 1, y: 0.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -161,8 +162,13 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0, y: 0.25}
-      - {x: -0.5, y: 0}
-      - {x: 0, y: -0.25}
-      - {x: 0.5, y: 0}
+    - - {x: 0.03655432, y: 0.16637339}
+      - {x: -0.000000009720679, y: 0.16857277}
+      - {x: -0.039147627, y: 0.167761}
+      - {x: -0.17429078, y: -0.0022008}
+      - {x: -0.16791207, y: -0.09042049}
+      - {x: -0.08582878, y: -0.1641709}
+      - {x: 0.08810367, y: -0.16084522}
+      - {x: 0.1701932, y: -0.079962544}
+      - {x: 0.17429075, y: 0.000000038649887}
   m_UseDelaunayMesh: 1

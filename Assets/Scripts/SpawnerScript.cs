@@ -6,13 +6,14 @@ using Random = UnityEngine.Random;
 
 public class SpawnerScript : MonoBehaviour
 {
-    /*[SerializeField] private GameObject enemyTemplate;
-    [SerializeField] private GameObject enemyTemplate2;*/
     public GameObject player { get { return playerPrefab; } }
+
+    [SerializeField] private AudioSource audioSource;
 
     [SerializeField] private GameObject playerPrefab;
     [SerializeField] private float spawnDelay;
     [SerializeField] private float spawnDelay2;
+    [SerializeField] private AudioClip enemyKill;
 
     public int score;
     [SerializeField] private TMPro.TextMeshProUGUI scoreText;
@@ -106,6 +107,7 @@ public class SpawnerScript : MonoBehaviour
     public void killEnemy(GameObject enemy, int collumNumber)
     {
         enemies.Remove(enemy);
+
         spawnPositions[collumNumber] -= 1;
 
         for (int i = 0; i < enemies.Count; i++)

@@ -17,12 +17,14 @@ public class BurstEnemy : EnemyObj
     {
         if (!bursting)
         {
+            Debug.Log("Starting to burst");
             StartCoroutine(BurstFire());
         }
     }
     private IEnumerator BurstFire()
     {
         bursting = true;
+        Debug.Log(bursting);
 
         for (int i = 0; i < burstShot; i++)
         {
@@ -38,6 +40,7 @@ public class BurstEnemy : EnemyObj
 
         // Cooldown after burst
         yield return new WaitForSeconds(burstCooldown);
+        Debug.Log("Ready to Shoot again");
         bursting = false;
     }
 }

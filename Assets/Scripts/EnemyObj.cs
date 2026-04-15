@@ -15,6 +15,7 @@ public class EnemyObj : MonoBehaviour
 
     [SerializeField] protected float bottomBound;
 
+
     [SerializeField] protected Transform objTransform;
 
     [SerializeField] protected int Health;
@@ -40,7 +41,7 @@ public class EnemyObj : MonoBehaviour
 
         objTransform = transform;
 
-        Health = 1;
+        Health = movementType.health;
     }
 
     protected virtual void Update()
@@ -110,7 +111,7 @@ public class EnemyObj : MonoBehaviour
 
     protected void enemyDownMovement(float speed)
     {
-        objTransform.Translate(Vector2.left *speed*Time.deltaTime);
+        objTransform.Translate(Vector2.up *speed*Time.deltaTime);
     }
 
     protected void ClampPosition()
