@@ -390,8 +390,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 465d83419f3129f438765b5e3785d176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerControls
-  leftBoarder: -8.5
-  rightBoarder: 8.5
+  leftBoarder: -7.5
+  rightBoarder: 7.5
   projectileBody: {fileID: 6654447893966475752, guid: 9d6e9cf82aab62e42b9c4c0b6bf52db1, type: 3}
   projectileOBJ: {fileID: 11400000, guid: d8c443f5ba7a35842a964ee87c7359df, type: 2}
   projectileRb: {fileID: 0}

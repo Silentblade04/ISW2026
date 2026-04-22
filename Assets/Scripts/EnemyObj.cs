@@ -1,4 +1,8 @@
+using System.Numerics;
 using UnityEngine;
+using Quaternion = UnityEngine.Quaternion;
+using Vector2 = UnityEngine.Vector2;
+using Vector3 = UnityEngine.Vector3;
 
 public class EnemyObj : MonoBehaviour
 {
@@ -23,7 +27,6 @@ public class EnemyObj : MonoBehaviour
     [SerializeField] protected GameObject projectileBody;
 
     [SerializeField] protected float spawnDelay;
-
 
     protected SpawnerScript spawnScript;
 
@@ -111,7 +114,8 @@ public class EnemyObj : MonoBehaviour
 
     protected void enemyDownMovement(float speed)
     {
-        objTransform.Translate(Vector2.up *speed*Time.deltaTime);
+        //objTransform.Translate(Vector2.up *speed*Time.deltaTime);
+        objTransform.position = Vector3.MoveTowards(objTransform.position, new Vector3(objTransform.position.x, bottomBound), speed * Time.deltaTime);
     }
 
     protected void ClampPosition()

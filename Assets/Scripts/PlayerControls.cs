@@ -33,7 +33,7 @@ public class PlayerControls : MonoBehaviour
     void Update()
     {
         playerMovment(new Vector2(Input.GetAxis("Horizontal"),0));
-        //Movement();
+        Movement();
         ClampPosition();
         mobileAttack();
 
@@ -89,14 +89,13 @@ public class PlayerControls : MonoBehaviour
     void Movement()
     {
         float x = Input.acceleration.x;//negative = left, positive = right
-        //Debug.Log("acceleration is " + x);
-        if (x < 0)
+        if (x > 0)
         {
-            playerTransform.Translate(Vector3.right * 2.5f * Time.deltaTime);
+            playerTransform.Translate(Vector3.right * Input.acceleration.x * 2.5f * Time.deltaTime);
         }
-        else if (x > 0)
+        else if (x < 0)
         {
-            playerTransform.Translate(Vector3.left * 2.5f * Time.deltaTime);
+            playerTransform.Translate(Vector3.left * Input.acceleration.x * 2.5f * Time.deltaTime);
 
         }
 
@@ -111,8 +110,9 @@ public class PlayerControls : MonoBehaviour
     {
         Vector2 pos = transform.position;
 
+        //Debug.Log("Clamping Position");
         pos.x = Mathf.Clamp(pos.x, leftBoarder, rightBoarder);
-        Debug.Log(pos.x);
+        //Debug.Log(pos.x);
         transform.position = pos;
     }
 }
