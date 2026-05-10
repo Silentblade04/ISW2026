@@ -11,7 +11,7 @@ public class EnemyProjectile : MonoBehaviour
         {
             timer -= Time.deltaTime;
         }
-        if (timer <= 0)
+        if (timer <= 0 || gameObject.transform.position.y <= -4)
         {
             Destroy(gameObject);
         }
@@ -22,7 +22,7 @@ public class EnemyProjectile : MonoBehaviour
         if (hitPlayer != null)
         {
             Debug.Log("Hit the player");
-            hitPlayer.damage();
+            hitPlayer.damage(1);
         }
         else
         {

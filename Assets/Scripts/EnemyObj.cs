@@ -28,6 +28,8 @@ public class EnemyObj : MonoBehaviour
 
     [SerializeField] protected float spawnDelay;
 
+    [SerializeField] protected PlayerControls playerControls;
+
     protected SpawnerScript spawnScript;
 
     protected int collumNumber;

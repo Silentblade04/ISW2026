@@ -10,6 +10,8 @@ public class SpawnerScript : MonoBehaviour
 
     [SerializeField] private AudioSource audioSource;
 
+    [SerializeField] private float y;
+
     [SerializeField] private GameObject playerPrefab;
     [SerializeField] private float spawnDelay;
     [SerializeField] private float spawnDelay2;
@@ -65,7 +67,16 @@ public class SpawnerScript : MonoBehaviour
             }
             else
             {
-                spawnEnemy(enemyTemplates[3]);
+                int r = Random.Range(1, 100);
+                if (r < 50)
+                {
+                    spawnEnemy(enemyTemplates[3]);
+
+                }
+                else
+                {
+                    spawnEnemy(enemyTemplates[4]);
+                }
                 Debug.Log("Spawning Adv Enemy");
             }
         }    
@@ -77,7 +88,7 @@ public class SpawnerScript : MonoBehaviour
 
             int i = Random.Range(0, spawnPositions.Length);
 
-            if (spawnPositions[i] >= 4)
+            if (spawnPositions[i] >= 12)
             {
                 spawnDelay = 1;
                 return;
@@ -91,7 +102,7 @@ public class SpawnerScript : MonoBehaviour
 
             float randomX = Random.Range(-8.5f, 8.5f);
 
-            GameObject enemy = Instantiate(template, new Vector3(randomX, transform.position.y + 0.5f, transform.position.z), template.transform.rotation);
+            GameObject enemy = Instantiate(template, new Vector3(randomX, transform.position.y + y, transform.position.z), template.transform.rotation);
             enemy.GetComponent<EnemyObj>().spawnedPosition(enemies.Count);
 
             enemies.Add(enemy);

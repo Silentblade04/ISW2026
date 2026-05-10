@@ -29,15 +29,14 @@ public class AdvEnemy : EnemyObj
         ClampPosition();
 
         playerPosition = spawnScript.player;
-        float distance = objTransform.position.x - playerPosition.transform.position.x;
-        Debug.Log(distance);
+        float direction = Mathf.Sign(playerPosition.transform.position.x - objTransform.position.x); Debug.Log(direction);
 
-        enemySideMovement(speed, distance);
+        enemySideMovement(speed, direction);
     }
     private void enemySideMovement(float speed, float direction)
     {
       Debug.Log("Moving to player X");
-      this.transform.Translate(new Vector3(direction, 0, 0) * speed * Time.deltaTime);
+      this.transform.Translate(new Vector3(0, direction, 0) * speed * Time.deltaTime);
       
     }
 }

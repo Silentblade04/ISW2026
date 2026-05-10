@@ -16,7 +16,6 @@ public class ProjectileScript : MonoBehaviour
 
     private void Update()
     {
-        //GetComponent<Rigidbody2D>().linearVelocity = Vector2.up * 10 * Time.deltaTime;
         if (timer > 0)
         {
             timer -= Time.deltaTime;

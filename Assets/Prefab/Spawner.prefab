@@ -44,13 +44,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a221d7b5dcccca4696dcffc91a3978b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnerScript
+  audioSource: {fileID: 0}
+  y: 0
   playerPrefab: {fileID: 0}
   spawnDelay: 0
   spawnDelay2: 0
+  enemyKill: {fileID: 0}
   score: 0
   scoreText: {fileID: 0}
   enemyTemplates:
   - {fileID: 4079291707869018057, guid: 36168ebb100405149ad3b27bcde3106d, type: 3}
   - {fileID: 3710683875993249889, guid: da9a4bfbf1b60a048a187b0d913019a9, type: 3}
   - {fileID: 8835515999319157975, guid: a966c8f2ad812bc48b8c9f2c2b846848, type: 3}
+  - {fileID: 8349298325300424228, guid: 38d2005b82be4824892e6715aad62a96, type: 3}
   - {fileID: 8349298325300424228, guid: 38d2005b82be4824892e6715aad62a96, type: 3}

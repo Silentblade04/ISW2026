@@ -10,6 +10,11 @@ using Debug = UnityEngine.Debug;
 
 public class PlayerControls : MonoBehaviour
 {
+    [SerializeField] private Camera playerCamera;
+    [SerializeField] private float camWidthMulti;
+    
+
+
     [SerializeField] private float leftBoarder;
     [SerializeField] private float rightBoarder;
 
@@ -32,6 +37,7 @@ public class PlayerControls : MonoBehaviour
 
     void Update()
     {
+
         playerMovment(new Vector2(Input.GetAxis("Horizontal"),0));
         Movement();
         ClampPosition();
@@ -77,9 +83,9 @@ public class PlayerControls : MonoBehaviour
         atkCoroutine = null;
     }
 
-    public void damage()
+    public void damage(int damage)
     {
-        health -= 1;
+        health -= damage;
         healthtext.text = "Health: 0";
         if (health == 0)
         {
